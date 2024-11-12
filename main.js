@@ -28,13 +28,44 @@ const sortByNumber = function(arr) {
 
 /*******************
  * YOUR CODE BELOW *
- *******************/
+ ******************/
+// click dice
+// log random number
+const d6 = document.querySelector('#d6-roll')
 
+const doubled6 = document.querySelector('#double-d6-roll-1', 'double-d6-roll-2')
+
+const d12 = document.querySelector('#d12-roll')
+
+const d20 = document.querySelector('#d20-roll')
+
+const resetButton = document.querySelector('#reset-button')
 
 
 /*******************
  * EVENT LISTENERS *
  *******************/
+d6.addEventListener("click", () => {
+  const random = getRandomNumber(6);
+  d6.src = `./images/d6/${random}.png`;
+})
+
+doubled6.addEventListener("click", () => {
+  const random1 = getRandomNumber(6);
+  const random2 = getRandomNumber(6);
+  doubled6.src = `./images/d6/${random1}.png`;
+  doubled6.src = `./images/d6/${random2}.png`;
+})
+
+d12.addEventListener("click", () => {
+  const random = getRandomNumber(12);
+  d12.src = `./images/numbers/${random}.png`;
+})
+
+d20.addEventListener("click", () => { 
+  const random = getRandomNumber(20);
+  d20.src = `./images/numbers/${random}.png`;
+})
 
 
 
@@ -43,7 +74,12 @@ const sortByNumber = function(arr) {
 /******************
  * RESET FUNCTION *
  ******************/
-
+resetButton.addEventListener("click", () => {
+  d6.src = './images/start/d6.png';
+  doubled6.src = './images/start/d6.png';
+  d12.src = './images/start/d12.jpeg';
+  d20.src = './images/start/d20.jpg';
+})
 
 
 /****************************
