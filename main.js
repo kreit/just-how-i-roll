@@ -33,7 +33,8 @@ const sortByNumber = function(arr) {
 // log random number
 const d6 = document.querySelector('#d6-roll')
 
-const doubled6 = document.querySelector('#double-d6-roll-1', 'double-d6-roll-2')
+const doubleD6Roll1 = document.querySelector('#double-d6-roll-1')
+const doubleD6Roll2 = document.querySelector('#double-d6-roll-2')
 
 const d12 = document.querySelector('#d12-roll')
 
@@ -50,12 +51,7 @@ d6.addEventListener("click", () => {
   d6.src = `./images/d6/${random}.png`;
 })
 
-doubled6.addEventListener("click", () => {
-  const random1 = getRandomNumber(6);
-  const random2 = getRandomNumber(6);
-  doubled6.src = `./images/d6/${random1}.png`;
-  doubled6.src = `./images/d6/${random2}.png`;
-})
+
 
 d12.addEventListener("click", () => {
   const random = getRandomNumber(12);
