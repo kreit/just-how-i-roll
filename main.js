@@ -31,16 +31,16 @@ const sortByNumber = function(arr) {
  ******************/
 // click dice
 // log random number
-const d6 = document.querySelector('#d6-roll')
+const d6 = document.querySelector('#d6-roll');
 
-const doubleD6Roll1 = document.querySelector('#double-d6-roll-1')
-const doubleD6Roll2 = document.querySelector('#double-d6-roll-2')
+const doubleD6Roll1 = document.querySelector('#double-d6-roll-1');
+const doubleD6Roll2 = document.querySelector('#double-d6-roll-2');
 
-const d12 = document.querySelector('#d12-roll')
+const d12 = document.querySelector('#d12-roll');
 
-const d20 = document.querySelector('#d20-roll')
+const d20 = document.querySelector('#d20-roll');
 
-const resetButton = document.querySelector('#reset-button')
+const resetButton = document.querySelector('#reset-button');
 
 
 /*******************
@@ -52,6 +52,15 @@ d6.addEventListener("click", () => {
 })
 
 
+doubleD6Roll1.addEventListener("click", () => { 
+  const random = getRandomNumber(6); 
+  doubleD6Roll1.src = `./images/d6/${random}.png`; 
+})
+
+doubleD6Roll2.addEventListener("click", () => {
+   const random1 = getRandomNumber(6);
+  doubleD6Roll2.src = `./images/d6/${random1}.png`;
+})
 
 d12.addEventListener("click", () => {
   const random = getRandomNumber(12);
@@ -65,23 +74,21 @@ d20.addEventListener("click", () => {
 
 
 
-
-
 /******************
  * RESET FUNCTION *
  ******************/
-resetButton.addEventListener("click", () => {
-  d6.src = './images/start/d6.png';
-  doubled6.src = './images/start/d6.png';
-  d12.src = './images/start/d12.jpeg';
+resetButton.addEventListener("click", () => { 
+  sixes.length = 0; 
+  doubleSixes.length = 0; 
+  twelves.length = 0; 
+  twenties.length = 0;
+  d6.src = './images/start/d6.png'; 
+  doubleD6Roll1.src = './images/start/d6.png'; 
+  doubleD6Roll2.src = './images/start/d6.png'; 
+  d12.src = './images/start/d12.jpeg'; 
   d20.src = './images/start/d20.jpg';
+    console.log('reset button clicked'); 
 })
-
-
-/****************************
- * CLICK HANDLING FUNCTIONS *
-****************************/
-
 
 
 /****************
